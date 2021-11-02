@@ -1,0 +1,32 @@
+#telaLogin, #body1 {
+    width: 18rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#tabelaLeads {
+    width: 800px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#body2 {
+    width: 36rem;
+}
+
+#body1, #body2, #tabelaLeads {
+    border: none;
+}
+
+#header {
+    background-color: #ffffff;
+}
+
+.card-img-top {
+    width: auto;
+}

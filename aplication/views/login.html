@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | EloGroup</title>
+
+    <link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/css.css">
+
+</head>
+<body>
+    <div class="card" id="telaLogin">        
+        <div class="card-body">
+            <form name="formulario">
+                <img class="card-img-top" src="../../assets/img/logo-elogroup.jpg" alt="Logo EloGroup"><br/>
+                <div class="form-group">
+                  <label>Usuário *</label>
+                  <input type="text" class="form-control" id="usuario" value required="required" onclick="return validar_forms()">
+                </div>
+                <div class="form-group">
+                  <label>Password *</label>
+                  <input type="password" class="form-control" name="senha" value required="required" onchange="return validar_forms()">
+                </div>
+                <div class="form-group">
+                    <label>Confirmação Password *</label>
+                    <input type="password" class="form-control" name="repitaSenha" value required="required" onchange="return validar_forms()">
+                  </div>                
+                <a class="btn btn-outline-dark btn-block" href="exibicaoLeads.html" onclick="return validar_forms()">Registrar</a>
+              </form>
+        </div>
+      </div>  
+    
+    <script>
+        function validar_forms() {
+            var senha = formulario.senha.value;
+            var repitaSenha = formulario.repitaSenha.value;
+            var usuario = formulario.usuario.value;
+            var regularExpression  = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/;;
+
+            if(usuario == "") {
+                alert('Preencha o campo usuário com seu e-mail ou nome de usuário cadastrado!');
+                return false;
+            }
+
+            if(senha == "" || senha.length <= 7) {
+                alert('Sua senha deve conter pelo menos 8 caracteres');
+                return false;
+            }
+
+            if(repitaSenha == "" || repitaSenha.length <= 7) {
+                alert('Sua senha deve conter pelo menos 8 caracteres');
+                return false;
+            }
+
+            if(senha != repitaSenha) {
+                alert('As senhas não podem ser diferentes!');
+                return false;
+            }
+            
+            if(!regularExpression.test(senha)) {
+                alert("ATENÇÃO!! Sua senha deve conter ao menos uma letra, um número e um caracter especial!");
+                return false;
+            }
+        }
+    </script>
+
+</body>
+</html>
